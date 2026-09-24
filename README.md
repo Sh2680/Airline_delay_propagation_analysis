@@ -48,6 +48,7 @@ LCC: 0.44
 Detailed findings, statistical results, business insights, and recommendations are available in the Project Report.
 
 
+
 🛠️ Tools & Technologies
 
 Python: Pandas, NumPy, SciPy
@@ -62,32 +63,49 @@ Documentation: Microsoft Word
 
 
 🔄 Workflow
+
 DelayedFlights.csv
+
         ↓
+        
 Python
+
 Cleaning + Feature Engineering + EDA + Statistical Testing
+
         ↓
+        
 cleaned_flights.csv
+
         ↓
+        
 DuckDB SQL
+
 Tail-number tracing + Propagation Scoring
+
         ↓
+        
 airline_delay_analysis.csv
+
         ↓
+        
 Power BI
+
 3-page Executive / Operational / Manager Dashboard
+
         ↓
+        
 Business Report
 
 
 The CSV files are generated during the analysis workflow.
 
+
 📊 Dashboard
 
 The project includes a 3-page Power BI dashboard covering:
 
-Executive Summary
-Operational Analysis
+Executive Summary,
+Operational Analysis,
 Manager Analysis
 
 See the dashboard screenshots and detailed analysis in the project report.
