@@ -62,43 +62,6 @@ BI: Power BI
 Documentation: Microsoft Word
 
 
-🔄 Workflow
-
-DelayedFlights.csv
-
-        ↓
-        
-Python
-
-Cleaning + Feature Engineering + EDA + Statistical Testing
-
-        ↓
-        
-cleaned_flights.csv
-
-        ↓
-        
-DuckDB SQL
-
-Tail-number tracing + Propagation Scoring
-
-        ↓
-        
-airline_delay_analysis.csv
-
-        ↓
-        
-Power BI
-
-3-page Executive / Operational / Manager Dashboard
-
-        ↓
-        
-Business Report
-
-
-The CSV files are generated during the analysis workflow.
-
 
 📊 Dashboard
 
