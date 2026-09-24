@@ -1,51 +1,82 @@
 # Airline_delay_propagation_analysis
 
-Identifying Source Airports That Create Network-Wide Disruptions
+📌 Project Overview
 
-A completed data analytics project quantifying how delay propagates through an airline's network, using a genuine aircraft tail-number tracing methodology. Built and run end-to-end: Python cleaning → DuckDB SQL analysis → Power BI dashboard → business report.
+An end-to-end airline network analytics project that identifies airports associated with delay propagation by tracing aircraft movements using aircraft tail numbers.
 
-Dataset
-Source: Kaggle — giovamata/airlinedelaycauses ("Airlines Delay"), file DelayedFlights.csv
-U.S. DOT / BTS on-time performance data, full year 
-1,936,758 raw rows × 30 columns → cleaned to 1,928,369 rows × 41 columns
+The project analyzes how delays propagate from one flight to the next and identifies airports with higher network-level propagation risk.
 
-Results Summary 
-269 origin airports scored for propagation risk (≥100 flights each)
-Highest propagation scores belong to small regional stations (HHH 0.76, SPI 0.75, CEC 0.74), not major hubs (IAH 0.41, DAL 0.41) 
-Late Aircraft Delay is the largest delay-cause category: 39.97% of total delay-minutes (31.56M of ~79M)
-49.70% of flights with a known previous leg are propagation events
-FSC carriers propagate more than LCC: 0.48 vs 0.44 propagation score
-All three statistical tests (Pearson correlation, Welch's t-test, chi-square) came back statistically significant (p < 0.001)
+Dataset: Kaggle — giovamata/airlinedelaycauses
+Source: U.S. DOT / Bureau of Transportation Statistics (BTS)
 
-Full findings, insights, and business recommendations are in Airline_analysis_project_report.docx
+Dataset size: 1,936,758 raw rows × 30 columns 
 
-Tools Used
+🎯 Business Problem
 
-Python (Pandas, NumPy, SciPy)	---Cleaning, feature engineering, statistical testing
-Matplotlib / Seaborn ---EDA visualizations
-DuckDB	---In-process SQL — window functions, CTEs, joins directly on the Pandas DataFrame
-Power BI	---3-page executive / operational / manager dashboard
+Flight delays can propagate when an aircraft arriving late operates its next scheduled flight.
 
-Workflow 
+This project answers:
 
-DelayedFlights.csv (Kaggle, 1,936,758 rows)
-       |
-       v
-[01_data_cleaning.ipynb]  --- cleaned, engineered, tested -> cleaned_flights.csv (1,928,369 rows)
-       |
-       v
-[02_sql_analysis.ipynb]  --- DuckDB: propagation scoring, cohorts -> airline_delay_analysis.csv (1,928,366 rows)
-       |
-       v
-[Power BI Dashboard]  --- 3 pages, built and screenshotted
-       |
-       v
-[Airline_analysis_project_report.docx]  --- full findings, insights, recommendations, BA deliverables
-File Structure
-├── 01_data_cleaning.ipynb        # Python: cleaning, EDA, statistical tests (as run)
-├── 02_sql_analysis.ipynb         # DuckDB SQL: true tail-number propagation scoring (as run)
-├── 03_report.docx                # Final report: findings, insights, recommendations, BA deliverables
-├── README.md                     # This file
-└── (referenced, generated at runtime)
-    ├── cleaned_flights.csv
-    └── airline_delay_analysis.csv
+Which airports are associated with higher delay propagation?
+How frequently do delays propagate between consecutive aircraft legs?
+Which delay causes contribute most to total delay?
+How does propagation differ between Full-Service Carriers and Low-Cost Carriers?
+
+📊 Key Results
+269 airports scored for propagation risk using a minimum threshold of 100 flights.
+Highest propagation scores were observed at:
+HHH — 0.76
+SPI — 0.75
+CEC — 0.74
+Major hubs such as IAH and DAL scored 0.41.
+Late Aircraft Delay accounted for 39.97% of total delay minutes (~31.56M of ~79M minutes).
+49.70% of flights with a known previous aircraft leg were identified as propagation events.
+Propagation score:
+FSC: 0.48
+LCC: 0.44
+
+
+Detailed findings, statistical results, business insights, and recommendations are available in the Project Report.
+
+🛠️ Tools & Technologies
+
+Python: Pandas, NumPy, SciPy
+Visualization: Matplotlib, Seaborn
+SQL: DuckDB
+BI: Power BI
+Documentation: Microsoft Word
+
+🔄 Workflow
+DelayedFlights.csv
+        ↓
+Python
+Cleaning + Feature Engineering + EDA + Statistical Testing
+        ↓
+cleaned_flights.csv
+        ↓
+DuckDB SQL
+Tail-number tracing + Propagation Scoring
+        ↓
+airline_delay_analysis.csv
+        ↓
+Power BI
+3-page Executive / Operational / Manager Dashboard
+        ↓
+Business Report
+
+
+The CSV files are generated during the analysis workflow.
+
+📊 Dashboard
+
+The project includes a 3-page Power BI dashboard covering:
+
+Executive Summary
+Operational Analysis
+Manager Analysis
+
+See the dashboard screenshots and detailed analysis in the project report.
+
+
+
+
