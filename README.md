@@ -19,10 +19,10 @@ Flight delays can propagate when an aircraft arriving late operates its next sch
 
 This project answers:
 
-Which airports are associated with higher delay propagation?
-How frequently do delays propagate between consecutive aircraft legs?
-Which delay causes contribute most to total delay?
-How does propagation differ between Full-Service Carriers and Low-Cost Carriers?
+1. Which airports are associated with higher delay propagation?
+2. How frequently do delays propagate between consecutive aircraft legs?
+3. Which delay causes contribute most to total delay?
+4. How does propagation differ between Full-Service Carriers and Low-Cost Carriers?
 
 📊 Key Results
 
